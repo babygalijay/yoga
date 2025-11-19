@@ -231,117 +231,48 @@
 
 
 .background-section {
-  /* 1. Background Image Setup */
-  background-image: url('https://res.cloudinary.com/dkoeutxie/image/upload/v1763035579/dp_ek1ae1.webp');
-  background-size: cover;
-  background-position: center;
-  min-height: 1000px; 
-  position: relative; 
-  padding: 50px;
+    /* 1. Background Image Setup */
+    background-image: url('https://res.cloudinary.com/dkoeutxie/image/upload/v1763035579/dp_ek1ae1.webp');
+    background-size: cover;
+    background-position: center;
+    /* min-height property is essential here */
+    min-height: 100vh; /* Use 100vh for full viewport height */
+    position: relative; 
+    
+    /* 2. Optional: Add a subtle overlay for better text contrast */
+    box-shadow: inset 0 0 0 1000px rgba(0, 0, 0, 0.3); /* Dark overlay */
+}
+
+/* 3. Ensure the container takes up the full height to position content */
+.background-section .container {
+    height: 100%;
 }
 
 .transparent-text-box {
-  /* 2. Positioning Top Right */
-  position: absolute;
-  top: 50px;
-  right: 50px;
-  width: 500px; 
-  padding: 20px;
-  /* 4. White Border */
-  border: 2px solid white;
-  border-radius: 5px;
-
-  /* Ensure the text is visible */
-  color: white;
-  text-shadow: 1px 1px 2px black; 
+    /* The Bootstrap column handles the positioning now */
+    width: 100%; /* It takes the full width of the col-6 */
+    padding: 20px;
+    border: 2px solid white;
+    border-radius: 5px;
+    
+    /* Ensure the text is visible */
+    color: white;
+    text-shadow: 1px 1px 2px black; 
+    
+    /* Optional: Limit the width slightly on large screens */
+    max-width: 500px; 
+    
+    /* Center text within the box for cleaner look on small screens */
+    text-align: center; 
 }
 
-/* --- OVERLAY SETUP --- */
-.overlay-wrapper {
-    /* 1. Establishes the positioning context */
-    position: relative; 
-    width: 100%;
-    min-height: 800px; /* Adjust height to fit your content and show the background image */
+/* Responsive adjustment for small screens (sm) */
+@media (max-width: 767.98px) {
+    .transparent-text-box {
+        /* On small screens, the box is centered and uses full column width */
+        margin: 0 auto; 
+    }
 }
-
-.background-image {
-    /* 2. Positions the image to cover the entire wrapper */
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    z-index: 1; /* Places the image layer at the bottom */
-}
-
-.background-overlay {
-    /* Optional: Provides a dark film for text readability */
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.4); /* 40% opaque black */
-    z-index: 1.5; /* Below content, above image */
-}
-
-.overlay-content {
-    /* 3. Ensures content flows naturally on top of the image */
-    position: relative; 
-    z-index: 2;
-    display: flex;
-    flex-direction: column; 
-    align-items: center; 
-    padding: 60px 20px;
-    width: 100%;
-    box-sizing: border-box;
-}
-
-/* --- TEXT/HEADING STYLES (Ensure Visibility) --- */
-.centered-text {
-    text-align: center;
-    margin-bottom: 30px;
-}
-.center-text {
-    text-align: center;
-}
-.centered-text h6 {
-    margin-bottom: 5px;
-}
-/* --- OVERLAY SETUP (Crucial for flow over image) --- */
-.overlay-wrapper {
-    position: relative; 
-    width: 100%;
-    min-height: 800px;
-}
-.background-image {
-    position: absolute;
-    top: 0; left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    z-index: 1;
-}
-.background-overlay {
-    position: absolute;
-    top: 0; left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.4); 
-    z-index: 1.5;
-}
-.overlay-content {
-    position: relative; 
-    z-index: 2; 
-    display: flex;
-    flex-direction: column; 
-    align-items: center; 
-    padding: 60px 20px;
-    width: 100%;
-    box-sizing: border-box;
-}
-
 /* --- BOLD CARD CONTAINER --- */
 .bold-card {
     /* Appearance */
@@ -623,49 +554,53 @@
 }
 
 /* SECTION CONTAINER */
-.gallery-section {
-    background-color: white; 
-    /* Reduced padding to give more room for the images */
-    padding: 60px 10px; 
+/* Custom CSS for the Two-Column Section */
+
+.two-column-section {
+    /* Optional: Sets a light background for the whole section */
+    background-color: #f8f9fa; 
 }
 
-/* GRID CONTAINER SETUP */
-.card-grid {
-    display: grid;
-    grid-template-columns: repeat(5, 1fr); 
-    gap: 15px;
-    /* INCREASED MAX-WIDTH to utilize more screen space */
-    max-width: 1400px; 
-    margin: 0 auto; 
+.image-column {
+    /* Ensures the column content is properly padded/aligned */
+    padding: 0;
 }
 
-/* INDIVIDUAL CARD STYLING */
-.picture-card {
-    /* Creates a 4:3 aspect ratio card (height is 75% of width) */
-    position: relative;
-    padding-bottom: 75%; 
-    overflow: hidden;
-    border-radius: 8px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); 
-    background-color: #f8f8f8;
-}
-
-/* IMAGE STYLING */
-.card-image {
-    /* Ensures the image fills the 4:3 card space */
-    position: absolute;
-    top: 0;
-    left: 0;
+.section-image {
+    /* img-fluid (from Bootstrap) already handles the main responsiveness. 
+       This CSS is just to ensure maximum compatibility. */
     width: 100%;
-    height: 100%;
-    object-fit: cover; 
-    transition: transform 0.3s ease;
+    height: auto;
+    display: block;
+    border-radius: 8px; /* Soft rounding of image corners */
+    object-fit: cover; /* Ensures image covers the space without distortion */
 }
 
-/* Optional: Hover effect for interactivity */
-.picture-card:hover .card-image {
-    transform: scale(1.05); 
+/* Custom styling for the H6 tag */
+.h8-style {
+    font-size: 0.8rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-weight: 700;
+    color: #007bff; /* Example color for the secondary heading */
 }
+
+/* Styling for the main button */
+.button-blue {
+    /* Inherits Bootstrap's .btn and .btn-primary styles, 
+       but you can override specific colors here if needed */
+    background-color: #007bff; 
+    border-color: #007bff;
+    color: white;
+    padding: 10px 25px;
+    transition: background-color 0.3s;
+}
+
+.button-blue:hover {
+    background-color: #0056b3; 
+    border-color: #0056b3;
+}
+
 
 /* SECTION STYLING */
 
@@ -904,145 +839,82 @@
     }
 }
 
+/* Custom CSS for Gallery Section */
 
+.gallery-section {
+    background-color: #f4f4f4; /* Light background for contrast */
+}
+
+/* The card-grid is now handled by the Bootstrap row and g-4 (gutter) class */
+.card-grid {
+    /* Optional: Center the grid content if it doesn't fill the full width */
+    justify-content: center;
+}
+
+.picture-card {
+    /* Ensures the card takes the full width of its column */
+    width: 100%;
+}
+
+.card-image {
+    /* img-fluid (from Bootstrap) already handles scaling. 
+       We enforce width and object-fit for consistent aspect ratio if needed. */
+    width: 100%;
+    height: 100%; /* Adjust this if you need a fixed aspect ratio for all images */
+    object-fit: cover;
+    display: block;
+}
+
+/* Styling applied via Bootstrap utility classes: 
+   - img-fluid: Makes images responsive.
+   - rounded: Adds soft corners.
+   - g-4: Adds spacing (gutter) between rows and columns.
+*/
     /* =============================
   /* =============================
     NEWS SECTION
 ============================= */
-.section-container {
-    padding-top: 80px;    /* Space above the entire section */
-    padding-bottom: 80px; /* Space below the entire section */
-    background-color: #ffffff; 
+/* Custom CSS for the News Section */
+
+/* 1. News Item Layout */
+.news-item {
+    /* Ensures items are vertically centered when d-flex is applied */
+    align-items: center; 
 }
 
-/* Styling for the new header block */
-.section-header {
-    text-align: center;
-    max-width: 800px;
-    margin: 0 auto 40px auto; /* Centered block with bottom spacing */
-}
-
-/* Styling the h8 element */
-.header-category {
-    display: block;
-    font-size: 0.8em; 
-    color: #007bff;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    margin-bottom: 10px;
-}
-
-/* Styling the h2 element */
-.header-title {
-    font-size: 2.2em; 
-    margin: 0 0 15px 0;
-    color: #222;
-}
-
-/* Styling the paragraph */
-.header-description {
-    font-size: 1.1em;
-    color: #666;
-    line-height: 1.6;
-}
-
-/* 1. Main Layout (Image Left / News Stack Right) */
-.main-layout-wrapper { 
-    display: flex;
-    justify-content: center;
-    /* Forces both columns (image and news) to match the height of the tallest one */
-    align-items: stretch; 
-    max-width: 1400px; 
-    margin: 0 auto; 
-    gap: 40px; /* Space between the image and the write-up stack */
-}
-
-/* 2. Left Block: Large Section Image */
-.section-image-feature {
-    flex: 2;
-    max-width: 500px; 
-    /* Ensures the image container stretches vertically */
-    align-self: stretch; 
-}
-
+/* 2. Styling for all images */
 .main-image {
-    width: 100%; /* Fills container width */
-    height: 100%; /* Fills container height, ensuring top-to-bottom stretch */
-    border-radius: 8px; 
+    /* img-fluid from Bootstrap handles responsiveness */
+    height: auto;
+    width: 100%; 
     object-fit: cover;
 }
 
-/* 3. Right Block: Vertically Stacked News Items */
-.news-vertical-stack {
-    flex: 2; 
-    display: flex;
-    flex-direction: column; /* Stacks the individual news items vertically */
-    gap: 20px;
-}
-
-/* 4. News Item Structure (Small Image Left / Text Right) */
-.news-item {
-    display: flex;
-    align-items: flex-start;
-    padding-bottom: 20px;
-    border-bottom: 1px dashed #ddd;
-}
-
-/* Remove border-bottom from the last item in the stack */
-.news-item:last-child {
-    border-bottom: none;
-    padding-bottom: 0;
-}
-
-
-/* 5. Small Rounded Image Styling (Inside the news item) */
+/* 3. Styling for the Small Thumbnails (Crucial for the vertical stack) */
 .news-image {
-    flex-shrink: 0;
-    margin-right: 20px;
+    width: 100px; /* Fixed width for the thumbnail container */
+    height: 70px; /* Fixed height for consistency */
+    flex-shrink: 0; /* Prevents shrinking in the d-flex layout */
 }
 
 .rounded-image {
-    width: 80px; 
-    height: 80px;
-    border-radius: 50%; 
-    object-fit: cover; 
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures the image fills the container without distortion */
+    border-radius: 4px; /* Slight rounding for thumbnails */
 }
 
-/* 6. Typography */
-.news-content {
-    flex-grow: 1;
-    text-align: left;
-}
-
-.category, .educate, .date {
-    font-size: 0.75em;
+/* 4. Text and Link Clean-up */
+.header-category {
+    /* Used for the small "NEWS" label */
+    font-size: 0.8rem;
+    letter-spacing: 2px;
     text-transform: uppercase;
-    color: #999;
-    margin-bottom: 5px;
-    display: inline-block;
-}
-
-.headline {
-    font-size: 1.2em;
-    margin: 0 0 5px 0;
-    line-height: 1.2;
-}
-
-.details {
-    margin: 0 0 5px 0;
-}
-
-.summary {
-    font-size: 0.9em;
-    color: #333;
-    margin-bottom: 10px;
 }
 
 .read-more {
-    text-decoration: none;
-    font-weight: bold;
-    color: #007bff;
-    font-size: 0.9em;
+    text-transform: uppercase;
+    font-size: 0.75rem;
 }
 
 
