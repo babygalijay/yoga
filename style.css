@@ -1,0 +1,1176 @@
+/* =============================
+    HERO SECTION
+============================= */
+.hero-section {
+    background-image: none !important; 
+    background-color: #b9d5e7; /* Your intended background color */
+    min-height: 85vh; 
+    padding-top: 5rem; 
+    padding-bottom: 5rem;
+    position: relative;
+    overflow: hidden;
+    color: #00214d;
+}
+
+/* Background watermark "YOGA" */
+.hero-bg-text {
+    position: absolute;
+    top: 50%; /* Center vertically */
+    left: 0; 
+    transform: translateY(-50%); 
+    text-align: center; 
+    font-size: 15vw;
+    font-weight: 900;
+    /* Very subtle color */
+    color: rgba(0, 0, 0, 0.05); 
+    white-space: nowrap; 
+    z-index: 1; 
+    user-select: none;
+    pointer-events: none;
+}
+
+/* Hero Content and Image Positioning */
+.hero-section .container {
+    position: relative; 
+    z-index: 4; 
+}
+
+.hero-content h1 {
+    font-size: 3.5rem;
+    font-weight: 700;
+    line-height: 1.2;
+    color: #1b264f; /* Darker blue heading */
+}
+
+.hero-content p.text-secondary {
+    font-size: 1.1rem;
+    color: #4c5b7c;
+    line-height: 1.6;
+}
+
+/* Hero Image Wrapper (Ensure image stays within bounds) */
+.hero-image-wrapper {
+    /* Add padding to lift image slightly for better look */
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.hero-image {
+    /* Ensure the image fills its container */
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 15% / 5%; /* Subtle rounding for the image corners */
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+/* Hero Wave (requires full SVG path to work properly) */
+.hero-wave {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    z-index: 2; 
+}
+
+.hero-wave svg {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+/* Responsive adjustments */
+@media (max-width: 992px) {
+    .hero-bg-text {
+        font-size: 14rem;
+        top: 5%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    .hero-content h1 {
+        font-size: 2.5rem;
+    }
+}
+
+/* =============================
+    APPROACH SECTION STYLING
+============================= */
+
+/* Icon Wrapper: Resetting padding/margin conflicts and adding style */
+.icon-wrapper {
+    /* Base Dimensions */
+    width: 90px;
+    height: 90px;
+    /* Centering and Shape */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 50%; /* Perfect circle */
+    background-color: #ffffff; /* White background */
+    margin-bottom: 1rem; 
+}
+
+.icon-img {
+    width: 50%; 
+    height: 50%;
+}
+
+/* Heading with Accent Underline */
+.approach-item h5 {
+    display: inline-block; /* Constrains the border width to the text length */
+    padding-bottom: 5px; 
+    
+    /* Using the button accent color for consistency */
+    border-bottom: 2px solid #4aacca; 
+    
+    margin-bottom: 1rem !important; 
+    font-size: 1.15rem; /* Slight increase for emphasis */
+}
+
+/* Video Placeholder (ensuring image aspect ratio looks good) */
+.video-placeholder {
+    /* Ensures the video container has rounded corners as intended */
+    border-radius: 0.5rem; 
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.video-image {
+    /* Ensures the image covers the container nicely with a good aspect ratio */
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Play Button Overlay */
+.play-button-overlay {
+    background-color: rgba(0, 0, 0, 0.5); 
+    border-radius: 50%;
+    width: 90px;
+    height: 90px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    
+    /* Style the play icon */
+    border: 2px solid white; 
+    cursor: pointer;
+}
+
+.video-placeholder:hover .play-button-overlay {
+    background-color: rgba(74, 202, 230, 0.7); /* Hover changes to light blue accent */
+    transform: translate(-50%, -50%) scale(1.1);
+}
+
+.about-us-section .about-text {
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+.about-us-section .col-lg-6 > p.fw-semibold {
+    font-size: 1.15rem; 
+    line-height: 1.5;
+}
+.final-cta-bg-section {
+    min-height: 120vh; 
+    background-position: center top;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    position: relative;
+}
+.final-cta-bg-section .container {
+    position: relative;
+    z-index: 2; /* Keep content above the background */
+}
+
+.footer-content-box {
+    background-color: rgba(255, 255, 255, 0.9); 
+    padding: 3rem;
+    min-height: 500px; 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+}
+
+
+.btn-cta-signup {
+    
+    background-color: #f0f0f0; /* Light Grey background */
+    color: #333333; /* Dark Grey/Black text */
+    border: 2px solid #000000; /* Black Border */
+    box-shadow: none !important; 
+    
+    /* Smooth transition for the hover effect */
+    transition: all 0.3s ease-in-out;
+}
+
+.btn-cta-signup:hover {
+   
+    background-color: #000000; /* Solid Black background */
+    color: #ffffff; /* White text */
+    border-color: #000000; /* Maintains the Black border */
+}
+.btn-cta-signup.btn-lg {
+    padding: 0.8rem 2.5rem; /* Large padding for a prominent button */
+    font-size: 1.25rem;
+}
+
+#footerCarousel .carousel-control-prev,
+#footerCarousel .carousel-control-next {
+    background-color: rgba(0, 0, 0, 0.5); 
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+    margin: 0 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: all 0.2s ease;
+}
+
+
+.background-section {
+  /* 1. Background Image Setup */
+  background-image: url('https://res.cloudinary.com/dkoeutxie/image/upload/v1763035579/dp_ek1ae1.webp');
+  background-size: cover;
+  background-position: center;
+  min-height: 1000px; 
+  position: relative; 
+  padding: 50px;
+}
+
+.transparent-text-box {
+  /* 2. Positioning Top Right */
+  position: absolute;
+  top: 50px;
+  right: 50px;
+  width: 500px; 
+  padding: 20px;
+  /* 4. White Border */
+  border: 2px solid white;
+  border-radius: 5px;
+
+  /* Ensure the text is visible */
+  color: white;
+  text-shadow: 1px 1px 2px black; 
+}
+
+/* --- OVERLAY SETUP --- */
+.overlay-wrapper {
+    /* 1. Establishes the positioning context */
+    position: relative; 
+    width: 100%;
+    min-height: 800px; /* Adjust height to fit your content and show the background image */
+}
+
+.background-image {
+    /* 2. Positions the image to cover the entire wrapper */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 1; /* Places the image layer at the bottom */
+}
+
+.background-overlay {
+    /* Optional: Provides a dark film for text readability */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4); /* 40% opaque black */
+    z-index: 1.5; /* Below content, above image */
+}
+
+.overlay-content {
+    /* 3. Ensures content flows naturally on top of the image */
+    position: relative; 
+    z-index: 2;
+    display: flex;
+    flex-direction: column; 
+    align-items: center; 
+    padding: 60px 20px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* --- TEXT/HEADING STYLES (Ensure Visibility) --- */
+.centered-text {
+    text-align: center;
+    margin-bottom: 30px;
+}
+.center-text {
+    text-align: center;
+}
+.centered-text h6 {
+    margin-bottom: 5px;
+}
+/* --- OVERLAY SETUP (Crucial for flow over image) --- */
+.overlay-wrapper {
+    position: relative; 
+    width: 100%;
+    min-height: 800px;
+}
+.background-image {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 1;
+}
+.background-overlay {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4); 
+    z-index: 1.5;
+}
+.overlay-content {
+    position: relative; 
+    z-index: 2; 
+    display: flex;
+    flex-direction: column; 
+    align-items: center; 
+    padding: 60px 20px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* --- BOLD CARD CONTAINER --- */
+.bold-card {
+    /* Appearance */
+    background-color: #89bed3; /* Sky Blue variant */
+    width: 95%;
+    max-width: 900px;
+    /* You may remove height: 400px; to let content define the height */
+    
+    /* Centering the content inside the card */
+    display: flex;
+    flex-direction: column; /* Stack items vertically */
+    align-items: center; /* Center items horizontally (logo, h1, p, button) */
+    justify-content: center; /* Center items vertically (if card has defined height) */
+    
+    /* Spacing and Visuals */
+    padding: 30px 20px;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3); /* Provides the 'bold' look */
+    margin: 40px auto; /* Centers the card within the main section */
+    text-align: center; /* Centers text elements that are wider than their content */
+    color: #333; /* Dark text for contrast */
+}
+
+/* --- LOGO --- */
+.card-logo {
+    width: 80px;
+    height: auto;
+    margin-bottom: 20px;
+}
+
+/* --- TEXT CONTENT --- */
+.bold-card h1 {
+    font-size: 2em;
+    margin: 10px 0;
+    line-height: 1.2;
+    /* Centering is handled by parent's align-items: center */
+}
+
+.bold-card p {
+    font-size: 1.1em;
+    max-width: 700px;
+    margin: 0 auto 30px; /* 'auto' for horizontal centering if max-width is less than card width */
+    line-height: 1.6;
+}
+
+/* --- BUTTON --- */
+.join-us-button {
+    background-color: #6d85c7; /* A complementary color */
+    color: white;
+    padding: 14px 35px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1em;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+
+/* CONTAINER SETUP */
+.next-section-container {
+    display: flex; /* Use Flexbox for side-by-side layout */
+    gap: 30px; /* Space between the image and the content */
+    align-items: stretch; /* Crucial: Makes both columns stretch to the height of the tallest one */
+    max-width: 1200px; /* Optional: Limit the overall width */
+    margin: 40px auto; /* Add vertical space and center the section */
+    padding: 20px;
+}
+
+/* IMAGE COLUMN STYLING */
+.image-column {
+    flex: 1; /* Allows the image column to take up half the space */
+    min-width: 0; /* Prevents overflow issues */
+}
+
+.section-image {
+    width: 100%; /* Image fills its container's width */
+    height: 100%; /* Crucial: Image fills the height of the content column */
+    object-fit: cover; /* Ensures the image covers the area without distortion */
+    border-radius: 8px; /* Optional: Soften the corners */
+}
+
+/* CONTENT COLUMN STYLING */
+.content-column {
+    flex: 1; /* Allows the content column to take up the other half */
+    display: flex;
+    flex-direction: column; /* Stack the heading, text, and button */
+    justify-content: center; /* Vertically center the content within its column */
+}
+
+/* TYPOGRAPHY AND BUTTON */
+.h8-style {
+    /* Simulating a smaller, distinct H8 style */
+    font-size: 0.9rem;
+    font-weight: 700; /* Bolder */
+    color: #007bff; /* Example accent color */
+    text-transform: uppercase;
+    margin-bottom: 0.5rem;
+}
+
+.content-column h1 {
+    font-size: 2.5rem;
+    margin-top: 0;
+    margin-bottom: 1rem;
+}
+
+.content-column h5 {
+    font-size: 1.25rem;
+    font-weight: 400;
+    margin-bottom: 1.5rem;
+    color: #555;
+}
+
+.content-column p {
+    flex-grow: 1; /* Allows the paragraph to push the button to the bottom */
+    margin-bottom: 1.5rem;
+}
+
+.button-blue {
+    /* Basic button styling */
+    align-self: flex-start;
+    padding: 7px 14px; 
+    background-color: #4aacca;
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;
+    font-weight: 600;
+    transition: background-color 0.3s;
+}
+
+/* =============================
+    PRICING SECTION
+============================= */
+.pricing-section {
+    padding: 80px 20px;
+    background-color: white; /* Clean background */
+    text-align: center;
+}
+
+/* Header Styling (Reusing styles from testimonials/headers) */
+.pricing-header {
+    margin-bottom: 50px;
+}
+
+.pricing-header .h7-style {
+    font-size: 1rem;
+    font-weight: 500;
+    color: #880e4f; /* Accent color */
+    text-transform: uppercase;
+    margin-bottom: 0.5rem;
+}
+
+.pricing-header h1 {
+    font-size: 2.8rem;
+    margin-bottom: 1rem;
+    color: #1b264f;
+}
+
+.pricing-header p {
+    font-size: 1.1rem;
+    color: #4c5b7c;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* Card Container (3-Column Grid) */
+.card-container {
+    display: grid;
+    /* Creates 3 equal columns for the pricing cards */
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Pricing Card Styling */
+.pricing-card {
+    background-color: #f8f8f8; /* Light gray card background */
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    text-align: left;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.pricing-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.pricing-card h3 {
+    color: #1b264f;
+    font-size: 1.5rem;
+    margin-top: 15px;
+    margin-bottom: 0.5rem;
+}
+
+.pricing-card > p { /* Target the immediate <p> after <h3> */
+    color: #7a7a7a;
+    margin-bottom: 25px;
+    min-height: 40px; /* Ensures consistent height across cards */
+}
+
+/* Icon Styling */
+.card-image-wrapper {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: #b9d5e7; /* Light blue accent background for icon */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+}
+
+.card-image {
+    width: 60%;
+    height: 60%;
+    object-fit: contain;
+}
+
+/* List of Rates */
+.price-list-rates {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 30px;
+    border-top: 1px solid #e0e0e0;
+}
+
+.price-list-rates li {
+    display: flex;
+    justify-content: space-between;
+    padding: 12px 0;
+    font-size: 1.05rem;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.plan-name {
+    color: #333;
+    font-weight: 500;
+}
+
+.plan-price {
+    color: #880e4f; /* Accent color for price */
+    font-weight: 700;
+}
+
+/* Join Button */
+.join-button {
+    display: block;
+    width: 100%;
+    padding: 12px 0;
+    background-color: #4aacca; /* Blue button accent */
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.join-button:hover {
+    background-color: #3c94b7;
+}
+
+/* Responsive adjustments */
+@media (max-width: 992px) {
+    .card-container {
+        /* On smaller screens, stack two cards per row */
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 576px) {
+    .card-container {
+        /* On tiny screens, stack all cards vertically */
+        grid-template-columns: 1fr;
+    }
+}
+
+/* SECTION CONTAINER */
+.gallery-section {
+    background-color: white; 
+    /* Reduced padding to give more room for the images */
+    padding: 60px 10px; 
+}
+
+/* GRID CONTAINER SETUP */
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr); 
+    gap: 15px;
+    /* INCREASED MAX-WIDTH to utilize more screen space */
+    max-width: 1400px; 
+    margin: 0 auto; 
+}
+
+/* INDIVIDUAL CARD STYLING */
+.picture-card {
+    /* Creates a 4:3 aspect ratio card (height is 75% of width) */
+    position: relative;
+    padding-bottom: 75%; 
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); 
+    background-color: #f8f8f8;
+}
+
+/* IMAGE STYLING */
+.card-image {
+    /* Ensures the image fills the 4:3 card space */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+    transition: transform 0.3s ease;
+}
+
+/* Optional: Hover effect for interactivity */
+.picture-card:hover .card-image {
+    transform: scale(1.05); 
+}
+
+/* SECTION STYLING */
+
+/* CAROUSEL CONTAINER */
+.testimonial-carousel {
+    position: relative;
+    max-width: 900px; 
+    margin: 0 auto;
+    /* This overflow is crucial if you try to visually slide them, but for this simple visibility swap, it just ensures clean edges */
+    overflow: hidden; 
+}
+
+/* NAVIGATION BUTTONS */
+.carousel-nav-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    z-index: 20; /* Ensures buttons are on top of the slide */
+    font-size: 1.5rem;
+    border-radius: 4px;
+    line-height: 1;
+    opacity: 0.7;
+}
+.prev-btn { left: 0; }
+.next-btn { right: 0; }
+
+/* --- CRITICAL: ROUNDED BORDER FOR IMAGE --- */
+.image-border-wrapper {
+    width: 100px; 
+    height: 100px;
+    border-radius: 50%; 
+    overflow: hidden; /* Crucial to crop the image within the circle */
+    margin-bottom: 10px;
+    display: flex; 
+    align-items: center;
+    justify-content: center;
+}
+
+.reviewer-image {
+   
+    width: 100%; /* CHANGED: Image fills 100% of its parent wrapper */
+    height: 100%; /* CHANGED: Image fills 100% of its parent wrapper */
+    border-radius: 50%; 
+    
+    object-fit: cover; /* Crops the image to fit without distortion */
+}
+/* SECTION STYLING */
+.testimonials-section {
+    padding: 80px 20px;
+    background-color: white; 
+    text-align: center;
+}
+
+/* HEADER STYLING */
+.testi-header {
+    margin-bottom: 50px;
+}
+
+/* CAROUSEL CONTAINER */
+.testimonial-carousel {
+    position: relative;
+    max-width: 900px; 
+    margin: 0 auto;
+    overflow: hidden; 
+}
+
+/* INDIVIDUAL SLIDE STYLING */
+.testimonial-slide {
+    display: none; 
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    min-height: 250px; 
+    flex-direction: column; 
+    align-items: center;
+    justify-content: center;
+}
+
+.testimonial-slide.active-slide {
+    display: flex; 
+}
+
+
+/* REVIEW QUOTE */
+.review-text {
+    font-size: 1.25rem;
+    font-style: italic;
+    color: #555;
+    margin-bottom: 25px;
+    /* Adjust max-width here if the lines are too long */
+    max-width: 700px; 
+}
+
+/* =============================
+    SPECIAL OFFER SECTION
+============================= */
+.special-offer-section {
+    position: relative;
+    padding: 100px 0; /* Vertical padding for content */
+    background-color: #f0f8ff; /* Fallback color if image fails to load */
+    background-size: cover; /* Cover the entire section */
+    background-position: center center; /* Center the background image */
+    background-repeat: no-repeat;
+    /* This is where you'll put your background image */
+    background-image: url('https://res.cloudinary.com/dkoeutxie/image/upload/v1762950441/uu_vxdzfb.avif'); 
+    /* Placeholder image: Replace with your actual special offer image */
+    
+    color: #fff; /* Default text color for contrast against a dark image */
+}
+
+/* Overlay for better text readability on background image */
+.special-offer-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4); /* Dark semi-transparent overlay */
+    z-index: 1;
+}
+
+/* Wrapper for content to allow it to float */
+.special-offer-section .container {
+    position: relative; /* Essential for z-index */
+    z-index: 2; /* Content sits above the overlay */
+}
+
+.offer-content-wrapper {
+    display: flex; /* Use flexbox to align content within the col */
+    align-items: center; /* Vertically center content */
+    min-height: 400px; /* Give some height to the wrapper */
+}
+
+/* Floating Text Box with Transparent Background */
+.offer-content {
+    /* No explicit background-color here, relying on transparency */
+    padding: 30px; /* Padding inside the text box */
+    border-radius: 8px; /* Slightly rounded corners */
+    text-align: left; /* Aligned to the left as requested */
+    color: white; /* Ensure text is visible over dark overlay */
+    max-width: 500px; /* Control the width of the text block */
+}
+
+/* Header styles */
+.offer-content .h7-style {
+    font-size: 1rem;
+    font-weight: 500;
+    color: #ffd700; /* Gold accent for "Special Offer" */
+    text-transform: uppercase;
+    margin-bottom: 0.5rem;
+}
+
+.offer-content h1 {
+    font-size: 3.2rem;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 1rem;
+    color: white;
+}
+
+.offer-content h4 {
+    font-size: 1.6rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: #f0f0f0;
+}
+
+.offer-content p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 2rem;
+    color: #e0e0e0;
+}
+
+/* Buttons */
+.offer-buttons .offer-btn {
+    font-size: 1.05rem;
+    font-weight: 600;
+    padding: 12px 30px;
+    border-radius: 5px;
+    margin-right: 15px; /* Space between buttons */
+    transition: all 0.3s ease;
+}
+
+.offer-buttons .btn-primary {
+    background-color: #4aacca; /* Your blue accent */
+    border-color: #4aacca;
+}
+
+.offer-buttons .btn-primary:hover {
+    background-color: #3c94b7;
+    border-color: #3c94b7;
+    transform: translateY(-2px);
+}
+
+.offer-buttons .btn-outline-dark {
+    color: white; /* Text color for outline button */
+    border-color: white; /* White border */
+    background-color: transparent;
+}
+
+.offer-buttons .btn-outline-dark:hover {
+    background-color: white;
+    color: #4aacca; /* Text changes to accent color on hover */
+    border-color: white;
+    transform: translateY(-2px);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 991px) {
+    .offer-content-wrapper {
+        offset: 0 !important; /* Remove offset on smaller screens */
+        text-align: center; /* Center content on smaller screens */
+        justify-content: center;
+        margin-top: 30px;
+    }
+    .offer-content {
+        text-align: center;
+        max-width: 100%;
+    }
+    .offer-buttons {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+    }
+    .offer-buttons .offer-btn {
+        margin-right: 0;
+        width: 80%; /* Make buttons full width in column */
+    }
+}
+
+
+    /* =============================
+  /* =============================
+    NEWS SECTION
+============================= */
+.section-container {
+    padding-top: 80px;    /* Space above the entire section */
+    padding-bottom: 80px; /* Space below the entire section */
+    background-color: #ffffff; 
+}
+
+/* Styling for the new header block */
+.section-header {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto 40px auto; /* Centered block with bottom spacing */
+}
+
+/* Styling the h8 element */
+.header-category {
+    display: block;
+    font-size: 0.8em; 
+    color: #007bff;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+}
+
+/* Styling the h2 element */
+.header-title {
+    font-size: 2.2em; 
+    margin: 0 0 15px 0;
+    color: #222;
+}
+
+/* Styling the paragraph */
+.header-description {
+    font-size: 1.1em;
+    color: #666;
+    line-height: 1.6;
+}
+
+/* 1. Main Layout (Image Left / News Stack Right) */
+.main-layout-wrapper { 
+    display: flex;
+    justify-content: center;
+    /* Forces both columns (image and news) to match the height of the tallest one */
+    align-items: stretch; 
+    max-width: 1400px; 
+    margin: 0 auto; 
+    gap: 40px; /* Space between the image and the write-up stack */
+}
+
+/* 2. Left Block: Large Section Image */
+.section-image-feature {
+    flex: 2;
+    max-width: 500px; 
+    /* Ensures the image container stretches vertically */
+    align-self: stretch; 
+}
+
+.main-image {
+    width: 100%; /* Fills container width */
+    height: 100%; /* Fills container height, ensuring top-to-bottom stretch */
+    border-radius: 8px; 
+    object-fit: cover;
+}
+
+/* 3. Right Block: Vertically Stacked News Items */
+.news-vertical-stack {
+    flex: 2; 
+    display: flex;
+    flex-direction: column; /* Stacks the individual news items vertically */
+    gap: 20px;
+}
+
+/* 4. News Item Structure (Small Image Left / Text Right) */
+.news-item {
+    display: flex;
+    align-items: flex-start;
+    padding-bottom: 20px;
+    border-bottom: 1px dashed #ddd;
+}
+
+/* Remove border-bottom from the last item in the stack */
+.news-item:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+
+/* 5. Small Rounded Image Styling (Inside the news item) */
+.news-image {
+    flex-shrink: 0;
+    margin-right: 20px;
+}
+
+.rounded-image {
+    width: 80px; 
+    height: 80px;
+    border-radius: 50%; 
+    object-fit: cover; 
+}
+
+/* 6. Typography */
+.news-content {
+    flex-grow: 1;
+    text-align: left;
+}
+
+.category, .educate, .date {
+    font-size: 0.75em;
+    text-transform: uppercase;
+    color: #999;
+    margin-bottom: 5px;
+    display: inline-block;
+}
+
+.headline {
+    font-size: 1.2em;
+    margin: 0 0 5px 0;
+    line-height: 1.2;
+}
+
+.details {
+    margin: 0 0 5px 0;
+}
+
+.summary {
+    font-size: 0.9em;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.read-more {
+    text-decoration: none;
+    font-weight: bold;
+    color: #007bff;
+    font-size: 0.9em;
+}
+
+
+
+/* =============================
+    FOOTER SECTION (.attafoot)
+============================= */
+.attafoot {
+    /* Background and basic style */
+    background-color: #00214d; /* Navy Blue background */
+    color: #f0f0f0; /* Light text color */
+    padding: 60px 20px 30px; /* Top, horizontal, and bottom padding */
+}
+
+/* Container for width limiting and centering content */
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* 1. CENTERED TOP BLOCK (Logo, Slogan, Nav) */
+.footer-center-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centers all content horizontally */
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+/* Logo and Slogan */
+.footer-logo {
+    width: 80px; /* Adjust size as needed */
+    height: auto;
+    margin-bottom: 10px;
+}
+
+.footer-slogan {
+    font-size: 1.1em;
+    font-style: italic;
+    color: #b9d5e7; /* Light accent color */
+    margin-bottom: 25px;
+}
+
+/* Navbar */
+.footer-nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 25px; /* Space between links */
+}
+
+.footer-nav a {
+    color: #f0f0f0;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.2s;
+}
+
+.footer-nav a:hover {
+    color: #4aacca; /* Blue accent on hover */
+}
+
+/* Separator */
+.footer-separator {
+    border: 0;
+    height: 1px;
+    background-color: rgba(255, 255, 255, 0.1);
+    margin: 30px 0;
+}
+
+
+/* 2. BOTTOM BLOCK: Social Left, Disclaimer Center, Copyright Right */
+.footer-bottom-bar {
+    display: flex;
+    justify-content: space-between; /* Pushes content to the far sides */
+    align-items: center;
+    flex-wrap: wrap; 
+    font-size: 0.9em;
+}
+
+/* Left Side: Social Icons (Now positioned first in HTML) */
+.footer-socials {
+    display: flex;
+    gap: 15px;
+    margin: 10px 0; /* Remove horizontal margin */
+    /* Allows the social icons to take the first available space on the left */
+    flex-grow: 0; /* Prevents expansion */
+}
+
+/* Center Block: Disclaimer P tag (Fills the remaining center space) */
+.footer-disclaimer {
+    /* Allows this to occupy the center space */
+    margin: 10px 20px; /* Added some margin for clearance */
+    flex-grow: 1; /* Allows it to expand in the middle */
+    text-align: center; /* Center the text within the expanded space */
+}
+
+/* Right Side: Copyright (Now positioned last in HTML) */
+.footer-copyright {
+    margin: 10px 0;
+    flex-grow: 0; /* Prevents expansion */
+    white-space: nowrap; /* Keeps the copyright text on one line */
+}
+
+/* Responsive adjustment for small screens (remains the same) */
+@media (max-width: 768px) {
+    .footer-bottom-bar {
+        flex-direction: column; 
+        text-align: center;
+    }
+    /* Ensure all elements stretch full width on mobile */
+    .footer-socials,
+    .footer-disclaimer, 
+    .footer-copyright {
+        width: 100%;
+        text-align: center;
+        margin: 5px 0;
+    }
+    .footer-disclaimer {
+        order: 3; /* Disclaimer goes last */
+    }
+    .footer-socials {
+        order: 1; /* Socials go first (top) */
+        justify-content: center;
+    }
+    .footer-copyright {
+        order: 2; /* Copyright goes second */
+    }
+}
+
